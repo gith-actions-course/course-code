@@ -22,4 +22,4 @@
         - name: echo a string
           run: Write-Output "Windows String"
         - name: error step
-          run: vgkjfe
+          run: vgkjf
