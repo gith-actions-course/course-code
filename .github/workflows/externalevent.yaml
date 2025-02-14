@@ -1,0 +1,9 @@
+name: External Event
+on:
+  repository_dispatch:
+
+jobs:
+  echo-s:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "rep dispatch"
