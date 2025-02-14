@@ -6,4 +6,4 @@ jobs:
   echo-s:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "rep dispatch"
+      - run: echo ${{ github.event.client_payload.env }}
