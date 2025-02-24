@@ -1,4 +1,4 @@
-name: Matrix
+name: Dynamics Matrix
 on:
   workflow_dispatch:
     inputs:
@@ -19,8 +19,8 @@ jobs:
       - run: echo "step-output=value 2" >> $GITHUB_OUTPUT
         id: step-2
       - run: |
-          echo '${{ steps.step1.outputs.step-output }}
-          echo '${{ steps.step2.outputs.step-output }}
+          echo '${{ steps.step1.outputs.step-output }}'
+          echo '${{ steps.step2.outputs.step-output }}'
   node-matrix:
     runs-on: ${{ matrix.os }}
     strategy:
