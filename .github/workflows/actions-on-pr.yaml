@@ -10,9 +10,9 @@ jobs:
         run: |
           {
             echo "result<<EOF"
-            mvn test --batch-mode 
+            mvn test --batch-mode | tail -n 10
             echo "EOF"
-          } >> "$GITHUB_OUTPUT"
+          } >> $GITHUB_OUTPUT
   leave-comment:
     permissions: write-all
     runs-on: ubuntu-latest
