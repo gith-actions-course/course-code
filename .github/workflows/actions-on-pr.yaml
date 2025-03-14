@@ -10,7 +10,7 @@ jobs:
         run: |
           {
             echo "result<<EOF"
-            mvn test --batch-mode | tail -n 10
+            mvn test --batch-mode 
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
   leave-comment:
