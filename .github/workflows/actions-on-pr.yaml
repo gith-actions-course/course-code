@@ -17,8 +17,9 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-      - name: leave comment
+      - name: echo output
         run: echo "${{ needs.run-tests.outputs.result }}"
+      - name: leave comment
         uses: actions/github-script@v7
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
