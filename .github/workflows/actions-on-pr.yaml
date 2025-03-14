@@ -9,7 +9,9 @@ jobs:
       - name: run tests
         run: |
           result=$(mvn test --batch-mode | tail -n 10)
-          echo "result=$result" >> $GITHUB_OUTPUT
+          echo "result<<EOF>>" >> $GITHUB_OUTPUT
+          echo "$result" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
   leave-comment:
     runs-on: ubuntu-latest
     steps:
