@@ -13,7 +13,7 @@ public class ExampleTest {
 
     @Test
     public void testStringNotEmpty() {
-        String str = "Hello, JUnit!";
+        String str = "Hello!";
         Assert.assertFalse(str.isEmpty());
     }
 }
