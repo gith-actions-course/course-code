@@ -6,16 +6,15 @@ jobs:
     outputs:
       result: ${{ steps.tests.outputs.result }}
     steps:
-      - name: checkout
+      - name: checkout repo
         uses: actions/checkout@v4
       - name: run tests
         id: tests
         run: |
-          {
-            echo "result<<EOF"
-            mvn test --batch-mode | tail -n 10
-            echo "EOF"
-          } >> $GITHUB_OUTPUT
+          result=$(mvn test --batch-mode | tail -n 10)
+          echo "result<<EOF" >> $GITHUB_OUTPUT
+          echo $result >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
   leave-comment:
     permissions: write-all
     runs-on: ubuntu-latest
