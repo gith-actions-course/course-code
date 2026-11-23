@@ -1,15 +1,10 @@
-name: Stale Issues & PRs
 on:
+  push:
   schedule:
-    - cron: "0 14 * * *"
-    - cron: "*/5 * * * *"
+    - cron: '*/10 * * * *'
+      timezone: 'Europe/Kyiv'
 jobs:
-  stale:
+  show:
     runs-on: ubuntu-latest
-    permissions: write-all
     steps:
-      - uses: actions/stale@v8
-        with:
-          stale-issue-message: "This is some message."
-          days-before-stale: 1
-          days-before-close: 5
+      - run: echo "schedule='${{ github.event.schedule }}'"
